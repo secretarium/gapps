@@ -5,7 +5,7 @@ from app.utils.mixin_models import LogMixin,DateMixin,SubControlMixin,ControlMix
 from flask_login import UserMixin
 from flask import current_app, request,render_template
 from werkzeug.security import generate_password_hash, check_password_hash
-from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
+from itsdangerous import (URLSafeTimedSerializer as Serializer, BadSignature, SignatureExpired)
 from datetime import datetime, timedelta
 from app import db, login
 from uuid import uuid4

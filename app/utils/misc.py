@@ -1,6 +1,6 @@
 from flask import current_app
 from app import models, db
-from itsdangerous import (TimedJSONWebSignatureSerializer as Serializer, BadSignature, SignatureExpired)
+from itsdangerous import (URLSafeTimedSerializer  as Serializer, BadSignature, SignatureExpired)
 from sqlalchemy import or_
 import re
 

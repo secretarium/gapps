@@ -74,7 +74,7 @@
                                             <span><i class="ti ti-checklist text-lg mr-1"></i></span>
                                             <span class="text-sm font-semibold m-auto" x-text="project.total_controls"></span>
                                         </div>
-                                        <div class="col-span-2 flex tooltip m-auto" data-tip="Total Policies">
+                                        <div class="col-span-2 flex tooltip m-auto" data-tip="Total Policies and Procedures">
                                             <span><i class="ti ti-notebook text-lg mr-1"></i></span>
                                             <span class="text-sm font-semibold m-auto" x-text="project.total_policies"></span>
                                         </div>
@@ -196,7 +196,7 @@
                                                     <i x-show="selectedFramework===framework" class="ti text-success ti-check mr-2 my-auto"></i>
                                                     <div class="card-title">Start from scratch</div>
                                                 </div>
-                                                <p>Create a project with an empty set of controls and policies. You can import a set of controls if you wish.</p>
+                                                <p>Create a project with an empty set of controls, procedures and policies. You can import a set of controls if you wish.</p>
                                                 <button x-show="selectedFramework===framework" @click="createProject" class="btn btn-sm btn-success">Get Started</button>
                                             </div>
                                         </div>
@@ -279,7 +279,7 @@
                                 <p class="" x-text="selectedItem.total_controls"></p>
                             </div>
                             <div class="col-span-4">
-                                <h4>Total Policies</h4>
+                                <h4>Total Policies and Procedures</h4>
                                 <p class="" x-text="selectedItem.total_policies"></p>
                             </div>
                             <div class="col-span-4">

@@ -1425,10 +1425,10 @@
 								</div>
 								<div class="flex flex-row justify-between">
 									<div class="flex flex-col mb-2">
-										<span class=" font-semibold">Total Policies</span>
+										<span class=" font-semibold">Total Policies and Procedures</span>
 										<span class="capitalize text-sm" x-text="projectData.total_policies"></span>
 									</div>
-									<button @click="switchTab({'tab': 'policies'})" class="btn btn-sm btn-ghost"><i class="ti ti-arrow-right my-auto"></i></button>
+									<button @click="switchTab({'tab': 'policies and procedures'})" class="btn btn-sm btn-ghost"><i class="ti ti-arrow-right my-auto"></i></button>
 								</div>
 								<div class="flex flex-row justify-between">
 									<div class="flex flex-col mb-2">
@@ -1485,13 +1485,13 @@
 									</tr>
 									<tr>
 										<td class="capitalize font-bold"><i class="ti ti-number-2"></i></td>
-										<td class="capitalize font-semibold">Add Policies</td>
-										<td>Add Policies to your project and start editing</td>
+										<td class="capitalize font-semibold">Add Policies and procedures</td>
+										<td>Add Policies and procedures to your project and start editing</td>
 										<td><button class="btn btn-ghost">
 											<i x-show="policies.length > 0" class="ti ti-check text-success"></i>
 											<i x-show="policies.length < 1" class="ti ti-x text-error"></i>
 										</button></td>
-										<td><button class="btn btn-sm btn-ghost" @click="switchTab({'tab': 'policies'})"><i class="ti ti-arrow-right text-lg"></i></button></td>
+										<td><button class="btn btn-sm btn-ghost" @click="switchTab({'tab': 'policies and procedures'})"><i class="ti ti-arrow-right text-lg"></i></button></td>
 									<tr>
 										<td class="capitalize font-bold"><i class="ti ti-number-3"></i></td>
 										<td class="capitalize font-semibold">Policy Review</td>
@@ -1501,7 +1501,7 @@
 											<i x-show="policyAcceptance === 'not started'" class="ti ti-x text-error"></i>
 											<i x-show="policyAcceptance === 'in progress'" class="ti ti-progress text-warning"></i>
 										</button></td>
-										<td><button class="btn btn-sm btn-ghost" @click="switchTab({'tab': 'policies'})"><i class="ti ti-arrow-right text-lg"></i></button></td>
+										<td><button class="btn btn-sm btn-ghost" @click="switchTab({'tab': 'policies and procedures'})"><i class="ti ti-arrow-right text-lg"></i></button></td>
 									</tr>
 									<tr>
 										<td class="capitalize font-bold"><i class="ti ti-number-4"></i></td>
@@ -1911,16 +1911,16 @@
 				</div>
 			</div>
 
-			<div class="col-span-6" x-show="selectedTab === 'policies' && !tabLoading">
+			<div class="col-span-6" x-show="selectedTab === 'policies and procedures' && !tabLoading">
 
 				<div class="card border border-base-200 bg-base-200">
 					<div class="card-body">
 						<div class="flex justify-between align-items-center">
-							<h2 class="card-title" x-text="'Project Policies ('+policies.length+')'"></h2>
+							<h2 class="card-title" x-text="'Project Policies and Procedures ('+policies.length+')'"></h2>
 							<div class="flex flex-row gap-x-2">
 								<div class="space-x-2 flex">
 									<a :href="'/projects/'+projectId+'/policy-center?create=true'" class="btn btn-xs capitalize btn-ghost text-success bg-base-100 text-xs"
-											 >Add Policy</a>
+											 >Add Policy or Procedure</a>
 									<a :href="'/projects/'+projectId+'/policy-center'" class="btn btn-xs capitalize btn-ghost bg-base-100 text-xs"
 											 >Policy Center</a>
 								</div>
@@ -1929,11 +1929,11 @@
 						<div x-show="!policies.length" class="grid grid-cols-4 text-center">
 						  <div class="col-span-full hero-content text-center">
 							<div class="max-w-md">
-							  <h1 class="text-2xl font-bold">No Policies</h1>
+							  <h1 class="text-2xl font-bold">No Policies or Procedures</h1>
 							  <p class="py-6">
-								You have not added any policies to you project. Let's add some, make edits and publish them.
+								You have not added any policies or procedures to you project. Let's add some, make edits and publish them.
 							  </p>
-							  <button @click="showAddPolicy=true" class="btn btn-sm btn-primary">Add Policy</button>
+							  <button @click="showAddPolicy=true" class="btn btn-sm btn-primary">Add Policy or Procedure</button>
 							</div>
 						  </div>
 						</div>
@@ -1944,7 +1944,7 @@
 								<thead class="border-b">
 								  <tr>
 									<th class="bg-base-200 rounded-tl-md p-2 text-xs border-b border-base-100 w-1">View</th>
-									<th class="bg-base-200 p-2 text-xs border-b border-base-100">Policy Title</th>
+									<th class="bg-base-200 p-2 text-xs border-b border-base-100">Policy and Procedure Titles</th>
 									<th class="bg-base-200 p-2 text-xs border-b border-base-100 w-2/12">Published</th>
 									<th class="bg-base-200 p-2 text-xs border-b border-base-100 w-2/12">Reviewer</th>
 									<th class="bg-base-200 p-2 rounded-tr-md text-xs border-b border-base-100 w-1">Versions</th>
@@ -2718,11 +2718,11 @@
 							class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕
 					</button>
 				</form>
-				<h2 class="py-2 text-xl font-semibold px-6">Add Policy</h2>
-				<p class="px-6">Once a policy is added to your project, you can make any required changes. You can visit the <a class="underline" :href="'/projects/'+projectId+'/policy-center'">policy center</a> to view/edit all your project policies.</p>
+				<h2 class="py-2 text-xl font-semibold px-6">Add Policy  or Procedure</h2>
+				<p class="px-6">Once a policy or procedure is added to your project, you can make any required changes. You can visit the <a class="underline" :href="'/projects/'+projectId+'/policy-center'">policy center</a> to view/edit all your project policies.</p>
 				<div class="grid grid-cols-10 gap-6 px-6 mt-4">
 					<div class="col-span-10">
-						<label class="block text-sm font-medium mb-2">Add Policy from Template</label>
+						<label class="block text-sm font-medium mb-2">Add Policy or Procedure from Template</label>
 						<select x-model="policyId" class="select select-sm select-bordered w-full">
 						  <option selected>Please select...</option>
 						  <template x-for="policy in tenantPolicies" :key="policy.id">
@@ -2733,7 +2733,7 @@
 				</div>
 				<div class="modal-action">
 					<button class="btn" @click="showAddPolicy=false">Close</button>
-					<button :disabled="!policyId" @click="addPolicy" class="btn btn-primary">Add Policy</button>
+					<button :disabled="!policyId" @click="addPolicy" class="btn btn-primary">Add Policy or Procedure</button>
 				</div>
 			</div>
 		</div>
@@ -3827,7 +3827,7 @@ function project(){
 		riskMessages: [],
 		messagesForControl: [],
 		tenantPolicies: [],
-		tabs: ["summary", "controls", "policies", "evidence", "comments", "risk register", "settings", "user management", "control tags"],
+		tabs: ["summary", "controls", "policies and procedures", "evidence", "comments", "risk register", "settings", "user management", "control tags"],
 		loadingSkeleton: '<span class="loading loading-dots loading-lg"></span>',
 		tabLoading: true,
 		tableLoading: true,

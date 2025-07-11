@@ -191,9 +191,9 @@
 
             <div x-show="policies.length>0 && !showEditPolicy && !showCreatePolicy" class="card card-body">
                 <div class="flex justify-between">
-                    <span class="text-xl"><i class="ti ti-book mr-1 my-auto text-lg"></i>Policies</span>
+                    <span class="text-xl"><i class="ti ti-book mr-1 my-auto text-lg"></i>Policies and Procedures</span>
                     <div class="flex flex-row gap-x-2">
-                        <button @click="showCreatePolicy=true" class="btn btn-xs btn-success" x-text="'Create/Add Policy ('+policies.length+')'"></button>
+                        <button @click="showCreatePolicy=true" class="btn btn-xs btn-success" x-text="'Create/Add Policy or Procedure ('+policies.length+')'"></button>
                     </div>
                 </div>
                 <div role="alert" class="alert bg-base-300">
@@ -236,7 +236,7 @@
             </div>
             <div x-show="(policies.length === 0 || showCreatePolicy) && !showEditPolicy" class="card card-body">
                 <div class="flex justify-between">
-                    <span class="text-xl"><i class="ti ti-book mr-1 my-auto text-lg"></i>Policies</span>
+                    <span class="text-xl"><i class="ti ti-book mr-1 my-auto text-lg"></i>Policies and Procedures</span>
                 </div>
                 <div class="hero-content text-center">
                     <div class="w-full max-w-lg">

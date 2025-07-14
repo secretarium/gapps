@@ -1118,7 +1118,7 @@ function vendor(){
           }
           return false
         },
-        switchTab: function({tab = null, view = null, useCache = true}) {
+        switchTab: function({tab = null, view = null, useCache = false}) {
           this.tabLoading = true;
           var tab = tab ?? this.selectedTab
           var view = view ?? this.view
@@ -1272,7 +1272,7 @@ function vendor(){
         refreshData: function() {
           this.switchTab({"tab": this.selectedTab, "useCache": false})
         },
-        getSummary: function(useCache=true) {
+        getSummary: function(useCache=false) {
           this.tabLoading=false;
         },
         getVendor: function() {
@@ -1392,7 +1392,7 @@ function vendor(){
                 this.newAppPayload
             );
         },
-        getApplications: function(useCache=true) {
+        getApplications: function(useCache=false) {
           request("GET",
             "/api/v1/vendors/" + this.vendorId +"/applications",
             data => {
@@ -1405,7 +1405,7 @@ function vendor(){
             }
           );
         },
-        getQuestionnaires: function(useCache=true) {
+        getQuestionnaires: function(useCache=false) {
           request("GET",
             "/api/v1/vendors/" + this.vendorId +"/questionnaires",
             data => {

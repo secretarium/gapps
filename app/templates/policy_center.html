@@ -955,7 +955,7 @@
               }
               return false
             },
-            getControls: function(useCache=true) {
+            getControls: function(useCache=false) {
               console.log("Trying to load controls")
               if (useCache) {
                 let cacheValue = this.keyExistsInLocalStorage(`${this.projectId}_controls`, parse=true);

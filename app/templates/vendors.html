@@ -1786,7 +1786,7 @@ function vendors(){
           }
           return false
         },
-        switchTab: function({tab = null, view = null, useCache = true, controlsFilter = null}) {
+        switchTab: function({tab = null, view = null, useCache = false, controlsFilter = null}) {
           this.tabLoading = true;
           this.tableLoading = true;
           var tab = tab ?? this.selectedTab
@@ -2447,7 +2447,7 @@ function vendors(){
                 }
             );
         },
-        getSummary: function(useCache=true) {
+        getSummary: function(useCache=false) {
           this.tabLoading=false;
         },
         loadSettings: function() {

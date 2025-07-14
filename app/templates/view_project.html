@@ -3761,7 +3761,7 @@ function project(){
 
 		  this.getUsersForProject()
 		  this.getProject()
-		  this.getControls(useCache=true)
+		  this.getControls(useCache=false)
 		  this.getPolicies()
 		  //this.getTenantPolicies()
 		  this.getProjectTags()
@@ -5166,7 +5166,7 @@ function project(){
 				);
 			}
 		},
-		switchTab: function({tab = null, view = null, useCache = true, controlsFilter = null}) {
+		switchTab: function({tab = null, view = null, useCache = false, controlsFilter = null}) {
 		  this.tabLoading = true;
 		  this.tableLoading = true;
 		  var tab = tab ?? this.selectedTab
@@ -5283,7 +5283,7 @@ function project(){
 		  this.disableRefreshBtn = true;
 		  this.switchTab({"tab": this.selectedTab, "useCache": false})
 		},
-		getSummary: function(useCache=true) {
+		getSummary: function(useCache=false) {
 		  this.tabLoading=false;
 		},
 		getProject: function() {
